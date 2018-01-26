@@ -333,8 +333,6 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		"IMMATURE SESSION: revenue %v",
 
 		util.FormatRatReward(totalRevenue),
-		util.FormatRatReward(totalMinersProfit),
-		util.FormatRatReward(totalPoolProfit),
 	)
 }
 
@@ -393,8 +391,6 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 	log.Printf("Inserted %v orphaned blocks to backend", result.orphans)
 
 	totalRevenue := new(big.Rat)
-	totalMinersProfit := new(big.Rat)
-	totalPoolProfit := new(big.Rat)
 
 	for _, block := range result.maturedBlocks {
 		
